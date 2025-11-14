@@ -1,0 +1,34 @@
+[project]
+name = "persian-asr"
+version = "0.1.0"
+description = "ASR  + Shekar + Gradio UI"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "torch",
+  "torchaudio",
+  "transformers>=4.44",
+  "accelerate",
+  "sentencepiece",
+  "gradio>=4",
+  "soundfile",
+  "librosa",
+  "webrtcvad-wheels",
+  "shekar",
+]
+
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B"]
+ignore = ["E203"] 
+
+[tool.pytest.ini_options]
+addopts = "-q"
+python_files = "test_*.py"
